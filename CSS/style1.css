@@ -1,0 +1,589 @@
+/* ==== google font import ==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* === color === */
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #3081ed;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --panel-color:#fff;
+    --box1-color: #4da3ff;
+    --box2-color: #ffe6ac;
+    --bo3-color: #e7d1fc;
+    --title-icon-color: #fff;
+    --text-color: #707070;
+
+    /* === Transition === */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+/* body{ */
+    /* min-height: 100vh; */
+    /* background-color: var(--primary-color); */
+/* } */
+body.dark{
+    --body-color: #3a3b3c;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #ccc;
+    --toggle-color: #fff;
+    --black-light-color: #ccc;
+    --border-color: #4d4c4c;
+    --panel-color:#242526;
+    --box1-color: #3a3b3c;
+    --box2-color: #3a3b3c;
+    --bo3-color: #3a3b3c;
+    --title-icon-color: #ccc;
+    --text-color: #ccc;
+}
+
+/* === put the bar at the left side ===  */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background-color: var(--panel-color);
+    transition: var(--tran-05);
+    z-index: 100;
+    border-right: 1px solid var(--border-color);
+}
+/* == end == */
+
+nav .logo-name{
+    display: flex;
+    align-items: center;
+}
+nav .logo-image{
+    display: flex;
+    justify-content: center;
+    min-width: 45px;
+}
+
+nav .logo-image img{
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+nav .logo-name .logo_name{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 14px;
+}
+
+/* ==== search box ==== */
+
+.search-box{
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+/* === pour mettre les liste inbriquees === */
+.menu-items li a span{
+    display: flex;
+    flex-grow: 1;
+}
+.menu-items ul ul li a::before{
+    content:'';
+    width: 5px;
+    height: 5px;
+    background-color: var(--title-icon-color);
+    border-radius: 50%;
+    margin: 0 15px;
+}
+.menu-items li.has-child ul{
+    max-height: 0;
+    /* opacity: 0; */
+    transition: all .2s ease-out;
+}
+.menu-items li.collapse ul{
+    max-height: 100vh;
+    opacity: 1;
+    transition: all ,5s ease-in;
+}
+/* == end here == */
+nav .menu-items{
+    margin-top: 20px;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-items li{
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+/* === disposition icon === */
+.menu-items li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+/* == end here == */
+.menu-items li .icon,
+.menu-items li .text{
+    color: var(--text-color);
+    transition: var(--tran-05);
+}
+.icon{
+    color:  var(--black-light-color);
+}
+
+/* ==== put color when over ==== */
+.menu-items li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+    position: relative;
+}
+.menu-items li .color:hover{
+    background: var(--primary-color);
+}
+.cl:hover{
+    color: var(--text-color);
+}
+.menu-items li a:hover .icon,
+.menu-items li a:hover .text{
+    color: var(--sidebar-color);
+}
+
+/* === end here === */
+
+/* ==== to put dot infront of word when hover ==== */
+.nav-links a:hover:before{
+    content: '';
+    position: absolute;
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+/* === end here === */
+.menu-items li a i{
+    font-size: 24px;
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-light-color);
+}
+.menu-items li a .link-name{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--black-light-color);
+}
+
+.sidebar .menu-items{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==== color when hover a word ==== */
+/* .nav-links  a:hover i, */
+/* .nav-links  a:hover .link-name{ */
+    /* color: var(--primary-color); */
+/* } */
+
+/* === end hover here === */
+
+/* ==== toogle-swith ==== */
+
+/* .menu-items li .icon{ */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* min-width: 60px; */
+    /* font-size: 20px; */
+/* } */
+/*  */
+
+/* === put line on logout === */
+.menu-items .logout-mod{
+    padding-top: 10px; /*== lift it up to 10px ==*/
+    border-top: 1px solid var(--border-color);
+}
+/* == end here == */
+.menu-items .mode{ 
+    position: relative;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+.menu-items .mode .moon-sun{ 
+    height: 50px; 
+    width: 70px; 
+    display: flex; 
+    align-items: center; 
+}
+.menu-items .mode i{ 
+    position: absolute; 
+    transition: var(--tran-03); 
+}
+
+.menu-items .mode i.sun{
+    opacity: 0;
+}
+/*  */
+/* body.dark .menu-items .mode i.sun{ */
+    /* opacity: 1; */
+    /* color: #fff; */
+/* } */
+/*  */
+/* body.dark .menu-items .mode i.moon{ */
+    /* opacity: 0; */
+/* } */
+/*  */
+/* ==== create the switch mode content ==== */
+.menu-items .mode .toggle-switch{
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--primary-color-light); 
+    transition: var(--tran-05); 
+}
+
+.toggle-switch .switch{
+   position: relative;
+  height: 22px; 
+  width: 44px; 
+  border-radius: 25px; 
+  background: var(--toggle-color);
+}
+
+/* ==== the cercle inside the switch mode ==== */
+.switch::before{
+   content: ''; 
+   position: absolute;
+   height: 15px;
+   width: 15px;
+   border-radius: 50%;
+   top: 50%; 
+   left: 5px;
+   transform: translateY(-50%);
+   background: var(--sidebar-color);
+   transition: var(--tran-03);
+}
+/* === end her === */
+body.dark .switch::before{
+   left: 32px;
+}
+
+/* === le dashboard === */
+
+.Dashboard{
+   position: relative;
+   left: 250px;
+   background-color: var(--toggle-color);
+   height: 100vh;
+   width: calc(100% - 250px);
+   padding: 10px 14px;
+}
+
+/* .Dashboard .top{ */
+   /* position: absolute; */
+   /* top: 0; */
+   /* width: 100%;  */
+   /* height: 60px;  */
+   /* display: flex; */
+   /* right: 0; */
+   /* width: calc(100% -250px); */
+   /* justify-content: space-between; */
+   /* padding: 10px 14px; */
+   /* background-color: var(--sidebar-couleur); */
+   /* padding: 1rem 1.5rem; */
+   /* border-bottom: 2px solid var(--border-color); */
+/* } */
+.Dashboard .top .link-name{
+   display: flex;
+   align-items: center;
+   font-size: 20px;
+   text-align: center;
+   font-family:Tahoma,sans-serif;
+}
+.Dashboard .top .sidebar-toggle{
+   font-size: 26px;
+   color: var(--text-color);
+   cursor: pointer;
+}
+
+.Dashboard .user img { 
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+.Dashboard .user{
+    position: relative;
+    display: flex;
+    top: -7px;
+}
+.menu-items .mode .toggle-switch{
+     position: absolute;
+     right: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     min-width: 60px;
+     border-radius: 6px;
+     cursor: pointer;
+     background: var(--primary-color-light); 
+     transition: var(--tran-05); 
+}
+
+.toggle-switch .switch{
+    position: relative;
+   height: 22px; 
+   width: 44px; 
+   border-radius: 25px; 
+   background: var(--toggle-color);
+}
+
+/* ==== the cercle inside the switch mode ==== */
+
+.switch::before{
+    content: ''; 
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%; 
+    left: 5px;
+    background: var(--sidebar-color);
+}
+/* === end her === */
+
+/* === le dashboard === */
+/* === pour mettre le reste du dashboard a gauche de 250px === */
+.Dashboard{
+    position: relative;
+    left: 250px;
+    background-color: var(--toggle-color);
+    height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+}
+/* == end == */
+
+.Dashboard .top{
+    position: absolute;
+    top: 0;
+    width: 100%; 
+    height: 60px; 
+    display: flex;
+    right: 0;
+    width: calc(100% -250px);
+    justify-content: space-between;
+    padding: 10px 14px;
+    background-color: var(--panel-color);
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+.Dashboard .top .sidebar-toggle{
+    font-size: 26px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.Dashboard .user a { 
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+.Dashboard .user{
+    position: relative;
+    display: flex;
+    top: -7px;
+}
+
+/* ========================= page principale ========================= */
+/* === Card container === */
+.main{
+    display: flex;
+    margin-top: -12%;
+}
+
+
+.card-container{
+    background: #fff;
+    padding: 2rem;
+
+}
+
+
+/*+++++++++ debut all page +++++++++*/
+.clickable{
+    cursor: pointer;
+}
+
+.margetop60{
+    margin-top: 60px;
+}
+
+h1 h2 h3{
+    font-size: 40px;
+    color: rgba(105, 241, 93, 0)
+}
+
+
+/*  +++++++ debut edit pwd ++++++   */
+
+.editpwd-page h1,h2{
+    color: #2e6da4;
+}
+
+.editpwd-page h1{
+    font-size: 45px;
+}
+
+
+.editpwd-page h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.editpwd-page form{
+    width: 400px;
+    margin: auto;
+}
+
+.editpwd-page input{
+    margin-bottom: 20px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.show-old-pwd,.show-new-pwd {
+    position: absolute;
+    top: 0px;
+    right: -35px;
+}
+
+
+/*  +++++++ fin edit pwd ++++++   */
+
+
+/*+++++++++  Debut nouvel utilisateur ***********/
+
+.user-page form{
+    width: 400px;
+}
+
+
+/*+++++++++  fin nouvel utilisateur ***********/
+
+
+.form-group {
+    position: relative;
+}
+
+.oeil{
+    position: absolute;
+    right: 14px;
+    top: 26px;
+	cursor: pointer;
+}
+
+.etoile{
+	font-size: 25px;
+    color: red;
+    position: absolute;
+    right: -3px;
+    top: 3px;
+}
+
+
+/*****   Tableau de bord ***********/
+
+
+.tableau-stat .stat{
+    padding: 20px;
+    font-size: 20px;
+    color:#FFF;
+    border-radius: 20px;
+    position:relative;
+    overflow: hidden;
+}
+
+.tableau-stat .stat span{
+    position: absolute;
+    font-size: 80px;
+    top: 55px;
+    left: 15px;
+}
+
+.tableau-stat .stat .effectif{
+    float: right;
+}
+
+.tableau-stat .stat .nbr{
+    font-size: 60px;
+}
+
+.tableau-stat .stat12{
+    background: #3498db;
+}
+.tableau-stat .stat1{
+    background: #c0392b;
+}
+
+.tableau-stat .stat2{
+    background: #e67e22;
+}
+
+

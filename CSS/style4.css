@@ -1,0 +1,34 @@
+body{
+    background-color: #707070;
+}
+
+.root{
+    --bg-color: #000;
+    --icon-color:#707070;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    width: 100%; 
+    height: 60px; 
+    display: flex;
+    right: 0;
+    width: calc(100% -250px);
+    justify-content: space-between;
+    padding: 10px 14px;
+    background-color: var(--bg-color);
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid var(--icon-color);
+}
+
+li{
+    color: var(--icon-color);
+}
+.bar li a{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    text-transform: none;
+    color: var(--icon-color);
+}
